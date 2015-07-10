@@ -191,5 +191,13 @@ class view extends model {
       return require($_SERVER['DOCUMENT_ROOT'].'/mvc/view/templates/form_update_post.phtml');
     }
 
+    public function formAddFilesToPost($post_id) {
+      return require($_SERVER['DOCUMENT_ROOT'].'/mvc/view/templates/form_add_file_post.phtml');
+    }
+
+    public function downloadFilesInPost($download){
+      return require($_SERVER['DOCUMENT_ROOT'].'/mvc/view/templates/download_file_in_post.phtml');
+    }
+
   }
 ?>
