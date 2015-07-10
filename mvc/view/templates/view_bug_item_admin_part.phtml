@@ -1,0 +1,26 @@
+<div class="info-block admin-part">
+	<h1>Admin part</h1>
+
+  <form method="POST" action="?page=item-bug-action&item=<?php print $bid;?>">
+
+    <div class="field-form"> 
+      <textarea rows="7" cols="35" name="admin_comment" class="input-text" placeholder="Admin Comment" required><?php print $admin_comment; ?></textarea>
+    </div> 
+
+    <div class="field-form">
+    	<label>
+        <input type="checkbox" name="allowed" placeholder="Allowed"  <?php print $allowed; ?>>Allowed</label></br>
+    </div> 
+
+    <div class="field-form">
+    	<label>
+        <input type="checkbox" name="done" placeholder="Done" <?php print $status; ?>>Done</label></br>
+    </div> 
+
+    <div class="field-form">
+      <input type="submit" class="input-submit" value="Edit">
+    </div>  
+
+  </form>
+
+</div>

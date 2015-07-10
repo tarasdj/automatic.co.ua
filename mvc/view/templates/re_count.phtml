@@ -1,0 +1,39 @@
+<div class="main-wrapper">
+	<h1>The methods of re-count read data</h1>
+
+	<p><span class="abz">The basic concept of the application</span> - the collection and conversion of data for further use in their technical reports on companies. All data is stored in the same format for each tag. The database they look datearray, dataarray - which will create a custom universal tool for data output to the report. All nodes on the accounting data are presented in the format of the value / hour. For exemple 1.01.2010 1:00:00 1267.98 m3 / h, 1.01.2010 2:00:00 1787.57 m3 / h etc. But suppose if your data is collected in a SCADA system such as WinCC, archive per second. Because the application was developed in the system of re-count. The following briefly describes all options for archiving.</p>
+
+	<h2>Tag Archive 500ms</h2>
+	<div class="right-side">
+		<img src="/files/Screen/screens-re-count/500ms.png" alt="">
+	</div>	
+	<div class="left-side">
+		<p>If the tag is archived in the SCADA system of the value of 500 ms then 1 day is 172 800 values and 7200 values in one hour. Because to get the data flow in 1 hour to do the sum of all values of the 7200's divided in 7200. A conversion formula would be:</p>
+		<p>h - hour</br>
+		[value/hour] = sum(0h ... 7200h) / 7200
+		</p>
+	</div>
+
+	<h2>Tag Archive 1ms</h2>
+	<div class="right-side">
+		<img src="/files/Screen/screens-re-count/1sec.png" alt="">
+	</div>	
+	<div class="left-side">
+		<p>If the tag is archived in the SCADA system of the value of 1s then 1 day is 86400 values and 3600 values in one hour. Because to get the data flow in 1 hour to do the sum of all values of the 3600's divided in 3600. A conversion formula would be:</p>
+		<p>h - hour</br>
+		[value/hour] = sum(0h ... 3600h) / 3600
+		</p>
+	</div>
+
+	<h2>Tag Archive 2ms</h2>
+	<div class="right-side">
+		<img src="/files/Screen/screens-re-count/2sec.png" alt="">
+	</div>	
+	<div class="left-side">
+		<p>If the tag is archived in the SCADA system of the value of 1s then 1 day is 43200 values and 1800 values in one hour. Because to get the data flow in 1 hour to do the sum of all values of the 1800's divided in 1800. A conversion formula would be:</p>
+		<p>h - hour</br>
+		[value/hour] = sum(0h ... 1800h) / 1800
+		</p>
+	</div>
+
+</div>

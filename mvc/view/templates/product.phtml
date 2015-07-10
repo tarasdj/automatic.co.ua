@@ -1,0 +1,74 @@
+<h1>OPC HDA Client</h1>
+<h2>Automatic OPC HDA Client for industry</h2>
+<h2>Good solution for technical reports</h2>
+	<p>	
+	<span class="abz">In this application, assembled all</span> the functionality to collect data from systems that support the OPC HDA. The main objective of this application - data collection and record it database MS SQL Server or ODBC. Each read is written to the database in a separate table, whose name is given by the client when adding a tag. Fields such a table is datearray and dataarray, which respectively lie-time data and values.
+	</p>	
+	<p>
+	<span class="abz">The data are received</span> and recorded in the database are automatically adjusted for convenient feeding them TECHNICAL reports.
+	</p>
+
+	<h2>Add tag to main read list</h2>
+	<p>
+	<span class="abz">To add tags to a common</span> list of tags in the client, we suggest using the standard <a href="https://www.matrikonopc.com/products/opc-desktop-tools/opc-hda-explorer.aspx">OPC HDA Client</a> from the company Matricon or any other that you will be comfortable.
+	</p>
+<div class="left-side popup-gallery product" itemscope itemtype="schema.org/MediaObject ">
+	<h1>Screenshots</h1>
+	<a title="Main Empty tag" href="/files/Screen/opc-hda-client-main-empty-tag-list.png" ><img src="/files/Screen/opc-hda-client-main-empty-tag-list.png" alt="" width="150px" height="150px" class="screen"></a>
+	<a title="Menu database" href="/files/Screen/opc-hda-client-menu-database-2.png" ><img src="/files/Screen/opc-hda-client-menu-database-2.png" alt="" width="150px" height="150px" class="screen"></a>
+	<a title="Main Filter" href="/files/Screen/opc-hda-client-menu-filter-2.png" ><img src="/files/Screen/opc-hda-client-menu-filter-2.png" alt="" width="150px" height="150px" class="screen"></a>
+	<a title="Server Tags" href="/files/Screen/opc-hda-client-server-tags.png" ><img src="/files/Screen/opc-hda-client-server-tags.png" alt="" width="150px" height="150px" class="screen"></a>
+	<a title="Set autoread time" href="/files/Screen/opc-hda-client-readout.png" ><img src="/files/Screen/opc-hda-client-readout.png" alt="" width="150px" height="150px" class="screen"></a>
+</div>
+
+<div class="right-side product" itemscope itemtype="schema.org/order">
+	<a href="?page=send-mail" class="slyle-link-1" hidden>Send Test Mail</a>
+<div class="info-wrapper">
+	<div class="info-d">
+	<h1>Free Download</h1>
+	<p><span class="abz">Here you can download a demo</span> version of the application and try out the production. In case of any problems, they can be set <a href="?page=contact">here</a>. If you find bugs in the application then we go <a href="?page=bug-list">here.</p></div>
+	<div class="prd">
+			<div class="download-wrapper">
+				<a href="?page=download&fname=automatic_opc_hda_client_server_application_sfx.exe" alt="Automatic OPC HDA Client Manual">
+				<img class="file-icon" src="files/img/Zip-256.png">
+				Automatic OPC HDA Client Demo License</a>
+			</div>	
+			<div class="manual-wrapper">
+				<a href="?page=download&fname=manual_in_proccess_development.txt" alt="Automatic OPC HDA Client Manual">
+				<img class="file-icon" src="files/img/Pdf-256.png">
+				Manual</a>
+			</div>	
+			<strong>License: </strong><span class="license info-value">Demo</span></br>
+			<strong>Price: </strong><span class="price info-value">FREE</span></br>
+			<strong>Downloads: </strong><span class="downloads info-value"><?php print $cd; ?></span></br>
+			<p>You may also view about methods of <a href="?page=re-count">Re-Count data</a></p>
+		</div>
+	</div>	
+	</div>
+</div>
+
+  <script>
+
+      $(document).ready(function() {
+        $('.popup-gallery').magnificPopup({
+          delegate: 'a',
+          type: 'image',
+          tLoading: 'Loading image #%curr%...',
+          mainClass: 'mfp-img-mobile',
+          gallery: {
+            enabled: true,
+            navigateByImgClick: true,
+            preload: [0,1] // Will preload 0 - before current, and 1 after the current image
+          },
+          image: {
+            tError: '<a href="%url%">The image #%curr%</a> could not be loaded.',
+            titleSrc: function(item) {
+              return item.el.attr('title') + '<small>by Gt-engineering</small>';
+            }
+          }
+        });
+      });
+    
+  </script>
+
+

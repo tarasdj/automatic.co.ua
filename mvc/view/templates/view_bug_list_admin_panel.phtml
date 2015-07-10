@@ -1,0 +1,11 @@
+<div class="main-wrapper">
+<h1>Bug List</h1>
+<div class="user-info-wrapper">
+	<?php while($row = mysql_fetch_assoc($result)): ?>
+	<div class="info-block">				
+			<div class="field-bug-list-admin-panel"> <a href="?page=bug-item&item=<?php print $row['id'] ?>"> <?php print urldecode($row['title']); ?></a></div>
+			<div class="field-bug-list-admin-panel"><?php print urldecode($row['date_create']); ?></div>	
+	</div>	
+	<?php endwhile; ?>	
+</div>
+</div>

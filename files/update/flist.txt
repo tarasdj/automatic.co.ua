@@ -1,0 +1,5 @@
+Automatic OPC HDA Client v4.2.exe
+Setup.ini
+upd.exe
+raread.exe
+manual.exe

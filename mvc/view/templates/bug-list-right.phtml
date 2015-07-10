@@ -1,0 +1,14 @@
+<div class="right-side panels">
+  <div class="wrapper-tb-r">
+  <?php $bug_item = 0; while($row = mysql_fetch_assoc($result)): $i = 0; $bug_item = $bug_item + 1;?>
+  <?php if ($row['status'] == '0'): $status = 'proccess'; else: $status = 'done'; endif;?>
+    <div class="bug-items <?php print $status;?>" id="bug-item-<?php print $bug_item;?>">
+      <div class="field-title"><a href="?page=bug-item&item=<?php print $row['id']; ?>"><?php print urldecode($row['title']); ?></a></div>
+      <div class="field-file"><img src="files/upload/<?php print $row['file']; ?>" width="100px" height="100px"></div>
+      <div class="field-description"><?php print  urldecode($row['description']); ?></div>
+      <div class="field-date_create"><strong>Post Date: </strong><?php print $row['date_create']; ?></div> 
+      <div class="status"><?php print $status;?></div>       
+    </div>  
+  <?php endwhile; ?> 
+</div>
+</div>
