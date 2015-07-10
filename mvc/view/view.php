@@ -199,5 +199,9 @@ class view extends model {
       return require($_SERVER['DOCUMENT_ROOT'].'/mvc/view/templates/download_file_in_post.phtml');
     }
 
+    public function rightSideOpen(){
+      return require($_SERVER['DOCUMENT_ROOT'].'/mvc/view/templates/right_side_open.phtml');
+    }
+
   }
 ?>
