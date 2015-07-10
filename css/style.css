@@ -949,6 +949,13 @@ a {
   margin: 50px 0px 30px 0px;
 }
 
+.fa-times {
+  color: #e74c3c !important;
+}
+
+.fa-times:hover{
+  color: #f1c40f !important;
+}
 
 
 

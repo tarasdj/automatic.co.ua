@@ -478,5 +478,16 @@ class model{
     }
 
 
+    public function deletePostFile($link, $file_id) {
+      mysql_set_charset('utf8', $link);
+      $sql  = 'delete from download where id = "' . $file_id . '"';
+      $result = mysql_query($sql, $link);
+      if (!$result){
+        print 'MySQL Error: ' . mysql_error();
+        exit;
+      } else {return $result;}     
+    }
+
+
   }
 ?>

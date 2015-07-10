@@ -54,7 +54,8 @@ class controller extends view{
       if (isset($_GET['page']) && $_GET['page']=='post-category') { $this->postCategory(); } else
       if (isset($_GET['page']) && $_GET['page']=='edit-post') { $this->editPost(); } else
       if (isset($_GET['page']) && $_GET['page']=='action-blog-post-edit') { $this->actionPostUpdate(); } else
-      if (isset($_GET['page']) && $_GET['page']=='add-file-post') { $this->actionAddPostFiles(); }
+      if (isset($_GET['page']) && $_GET['page']=='add-file-post') { $this->actionAddPostFiles(); } else
+      if (isset($_GET['page']) && $_GET['page']=='action-delete-file-from-post') { $this->deleteFilePost(); }
       else if (isset($_GET['page'])){
          $page = $_GET['page'];        
          view::content_view($page);
@@ -68,7 +69,7 @@ class controller extends view{
     public function insertToHistory(){
       $link = $this->connect_mysql();
       $ip = $_SERVER['REMOTE_ADDR'];
-      $page = $_GET['page'];
+      if (isset($_GET['page'])) { $page = $_GET['page']; } else { $page = 'home';};
       $grant = $this->admin();
       $country = $this->ip_info($ip, "country");
       $city = $this->ip_info($ip, "sity");
@@ -726,7 +727,8 @@ class controller extends view{
       view::formUpdatePost($title, $teaser, $blog_text, $post_id);
       view::formAddFilesToPost($post_id); 
       $download = model::getDownloadList($link, $post_id);   
-      view::downloadFilesInPost($download);    
+      view::downloadFilesInPost($download);
+      view::ajaxImgGif();    
     endif;
   }
 
@@ -764,15 +766,23 @@ class controller extends view{
     endif;  
   }
 
+  public function deleteFilePost(){
+    $file_id = $_GET['file'];
+    $post_id = $_GET['post'];
+    $link = $this->connect_mysql();
+    model::deletePostFile($link, $file_id); 
+    header("Location: /?page=edit-post&post=".$post_id);
+  }
+
   //********************************************
 
   function uploadFile($folder)
   {
     //*****************Загрузка файла***********************
-      $uploaddir = 'files/'.$folder.'/';
-      $file = $uploaddir . basename($this->file);
-      move_uploaded_file($this->tmp_file, $file);
-      //******************************************************  
+    $uploaddir = 'files/'.$folder.'/';
+    $file = $uploaddir . basename($this->file);
+    move_uploaded_file($this->tmp_file, $file);
+    //******************************************************  
   }
 
   function ip_info($ip = NULL, $purpose = "location", $deep_detect = TRUE) {
