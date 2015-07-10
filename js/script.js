@@ -31,13 +31,13 @@
 
 })
 
-function ajaxAddBlogCategories(bid, cid){
+function deleteFile(file_id){
   $('#img_load').show();
   $.ajax(
     {    
     type: 'POST',
-    url: 'automatic.co.ua/mvc/controller/ajaxcontroller.php',
-    data: '&bid='+bid+'&cid='+cid,
+    url: '/?page=action-delete-file-from-post',
+    data: '&file='+file_id,
     async: false,
     error: function() 
     { 
@@ -47,7 +47,6 @@ function ajaxAddBlogCategories(bid, cid){
       success: function(data)
     {
         $('#img_load').hide();  
-        $('.ajax-categories').text(data);     
     }
     
   });
