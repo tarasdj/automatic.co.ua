@@ -53,7 +53,8 @@ class controller extends view{
       if (isset($_GET['page']) && $_GET['page']=='single-post') { $this->singleBlogItem(); } else
       if (isset($_GET['page']) && $_GET['page']=='post-category') { $this->postCategory(); } else
       if (isset($_GET['page']) && $_GET['page']=='edit-post') { $this->editPost(); } else
-      if (isset($_GET['page']) && $_GET['page']=='action-blog-post-edit') { $this->actionPostUpdate(); }
+      if (isset($_GET['page']) && $_GET['page']=='action-blog-post-edit') { $this->actionPostUpdate(); } else
+      if (isset($_GET['page']) && $_GET['page']=='add-file-post') { $this->actionAddPostFiles(); }
       else if (isset($_GET['page'])){
          $page = $_GET['page'];        
          view::content_view($page);
@@ -428,7 +429,7 @@ class controller extends view{
         $descr = urlencode($_POST['bug_description']);
         $this->file = $_FILES['uploadfile']['name'];
         $this->tmp_file = $_FILES['uploadfile']['tmp_name'];
-        $this->uploadFile();
+        $this->uploadFile('upload');
         $link = $this->connect_mysql();
         model::AddBugItem($title, $descr, $this->file, $link);
         view::successMessage('Succesfully added to database bugs! Be visible in site after administrator verification');
@@ -635,7 +636,6 @@ class controller extends view{
     $link = $this->connect_mysql();
     $category_dataset = model::getBlogCategories($link);
     view::formAddBlog($category_dataset, $pid);
-    view::ajaxImgGif();
   }
 
   public function actionBlogItem() {
@@ -723,7 +723,10 @@ class controller extends view{
         $teaser = urldecode($row['teaser']); 
         $blog_text = urldecode($row['blog_text']);  
       }  
-      view::formUpdatePost($title, $teaser, $blog_text, $post_id);     
+      view::formUpdatePost($title, $teaser, $blog_text, $post_id);
+      view::formAddFilesToPost($post_id); 
+      $download = model::getDownloadList($link, $post_id);   
+      view::downloadFilesInPost($download);    
     endif;
   }
 
@@ -748,12 +751,25 @@ class controller extends view{
     endif; 
   }
 
+  public function actionAddPostFiles() {
+    if (isset($_POST['filetitle']) && isset($_FILES['uploadfile'])):
+      $post_id = $_GET['post'];
+      $file_title = $_POST['filetitle'];
+      $this->file = $_FILES['uploadfile']['name'];
+      $this->tmp_file = $_FILES['uploadfile']['tmp_name'];
+      $this->uploadFile('download');
+      $link = $this->connect_mysql();    
+      model::insertDownload($link, $this->file, $file_title, $post_id);
+      header("Location: /?page=edit-post&post=".$post_id);
+    endif;  
+  }
+
   //********************************************
 
-  function uploadFile()
+  function uploadFile($folder)
   {
     //*****************Загрузка файла***********************
-      $uploaddir = 'files/upload/';
+      $uploaddir = 'files/'.$folder.'/';
       $file = $uploaddir . basename($this->file);
       move_uploaded_file($this->tmp_file, $file);
       //******************************************************  

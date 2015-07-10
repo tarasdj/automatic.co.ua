@@ -151,6 +151,21 @@ class model{
       }        
     }
 
+    public function insertDownload($link, $file_name, $file_title, $post_id) {
+      mysql_set_charset('utf8', $link);
+      $sql  = 'insert into download (cd, filename, post_id, file_title) ';
+      $sql .='values("0", "' . $file_name . '", "' . $post_id . '", "' . $file_title . '")';
+      $result = mysql_query($sql, $link);
+      if (!$result)
+      {
+        print 'MySQL Error: ' . mysql_error();
+        exit;
+      } else {
+      $result = 'ok';
+        return $result;
+      }        
+    }
+
     public function getBugs($link) {
       mysql_set_charset('utf8', $link);
       $sql  = 'select id, title, description, date_create, file, status from bug_list where allowed = "1" order by id desc';
