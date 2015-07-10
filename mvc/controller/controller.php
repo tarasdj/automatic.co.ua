@@ -121,7 +121,7 @@ class controller extends view{
 
     public function product(){
       $link = $this->connect_mysql();
-      $result = model::getCountDownloads($link, 1);
+      $result = model::getCountDownloads($link, 8);
       while($row = mysql_fetch_assoc($result)){
         $cd = $row['cd'];
       } 
@@ -197,8 +197,9 @@ class controller extends view{
         $result = model::getUser($link, $hash);
         view::userInfoLeft($result); 
         $result = model::getLicensed($link, $uid);
-        $lcount = mysql_num_rows($result);
+        $lcount = mysql_num_rows($result);        
         view::titleYourLicense();
+        view::rightSideOpen();
         if ($lcount == 0){
           view::emptyLicense();
           view::addLicenseButton();
@@ -222,7 +223,8 @@ class controller extends view{
               } 
             }
         } 
-        view::addLicenseButton();   
+        view::addLicenseButton(); 
+        view::mainWrapperClose();  
       }
     }
 
