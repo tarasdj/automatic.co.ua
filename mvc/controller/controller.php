@@ -20,7 +20,7 @@ class controller extends view{
 
     public function routing(){
 
-      $this->maintenance(false);
+      $this->maintenance(true);
       $this->insertToHistory();
       
       if (isset($_GET['page']) && $_GET['page']=='user') { $this->Auth(); } else
