@@ -394,7 +394,7 @@ class model{
 
     public function getHistory($link){
       mysql_set_charset('utf8', $link);
-      $sql  = 'select * from history_site order by id desc limit 10';
+      $sql  = 'select * from history_site order by id desc limit 30';
       $result = mysql_query($sql, $link);
       if (!$result){
         print 'MySQL Error: ' . mysql_error();
