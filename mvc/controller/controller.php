@@ -20,7 +20,7 @@ class controller extends view{
 
     public function routing(){
 
-      $this->maintenance(true);
+      $this->maintenance(false);
       $this->insertToHistory();
       
       if (isset($_GET['page']) && $_GET['page']=='user') { $this->Auth(); } else
@@ -595,7 +595,9 @@ class controller extends view{
 
     public function enterAuthcode(){
       $lid = $_GET['lid'];
+      view::mainWrapperOpen();
       view::formEnterAuthcode($lid);
+      view::mainWrapperClose();
     }
 
     public function buyLicense(){
@@ -744,7 +746,7 @@ class controller extends view{
         $link = $this->connect_mysql();
         model::UpdatePost($link, $title, $teaser, $body, $post_id);
         view::successMessage('Post successfully updated!');
-        view::redirect('blog&post='.$post_id);
+        view::redirect('single-post&post='.$post_id);
       else: 
         view::errorMessage('Data update error! Something wrong!');
         view::redirect('blog');
