@@ -10,6 +10,7 @@
     background-color: rgba(47, 65, 84, 0.6);
     overflow: auto;
     padding: 0px;
+    height: auto;
   }
 
   .fa {
@@ -158,6 +159,10 @@
   #img-tutorial {
     width: 100%;
     height: auto;    
+  }
+
+  .menu-wrapper {
+    padding: 0px;
   }
 
 }

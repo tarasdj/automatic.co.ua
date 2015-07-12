@@ -473,7 +473,9 @@ class controller extends view{
         if ($status == '1'): $status = 'checked'; else: $status = ''; endif; 
         $grant = $this->admin();      
         if ($grant): 
+          view::mainWrapperOpen();
           view::bugItemAdminPart($bid, $admin_comment, $allowed, $status);
+          view::mainWrapperClose();
         endif;
         $this->comment($bid);
       else: 
