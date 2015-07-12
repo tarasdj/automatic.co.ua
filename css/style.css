@@ -29,7 +29,7 @@
 }
 
 footer {
-  background: #2c3e50;
+  background: #24242A;
   color: #fff; 
   padding: 30px;
   overflow: auto;
@@ -57,17 +57,17 @@ td {
 }
 
 .content {
-  color: #444;
-  margin-top: 55px;
+  color: #FBF;
   margin-bottom: 55px;
   overflow: auto;
-  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  box-shadow: 0 0 10px rgba(255, 198, 0, 0.5);
   padding-bottom: 30px;
 }
 
 .main-menu {
-  background-color: rgba(47, 65, 84, 0.6);
-  padding: 29px 30px 52px 30px;
+  background: #24242A;
+  height: 77px;
+  border: 1px solid #FF1;
 }
 
 .item-menu {
@@ -78,20 +78,24 @@ td {
   color: #fff;
   font-size: 16px;
   text-decoration: none;
-  padding: 29px 20px 29px 20px;
+  padding: 27px 20px 27px 20px;
   text-transform: uppercase;
+  margin: 0px 2px 0px 2px;
 }
 
 .menu-link:hover{
-  background: #34495e;
-  box-shadow: 0 0 10px rgba(0,0,0,0.5);
-  color: #1ABC9C;
-  transition: 600ms;
+  background: #212121;
+  color: #F1C40F;
+  transition: 400ms;
+}
+
+.menu-wrapper {
+  padding: 27px;
 }
 
 .logo {
-  width: 100px;
-  height: 100px;
+  width: 77px;
+  height: auto;
   float: left;
   opacity: 1;
 }
@@ -110,6 +114,8 @@ td {
   font-family: 'OpenSans-Regular';
   font-size: 18px;
   width: 85%;
+  color: #FBF;
+  background: #000
 }
 
 .field-form {
@@ -157,7 +163,7 @@ form {
   border: 1px solid #1ABC9C;
   margin: auto;
   padding: 24px 23px 20px;
-  background-color: #EDEFF1;
+  background-color: #00141B;
   border-radius: 6px;
 }
 
@@ -398,7 +404,7 @@ h3{
 
 .user-info-wrapper {
   text-align: center;
-  background: #EFF0F2;
+  background: #0D1421;
   border-radius: 8px;
   padding: 8px;
   border: 1px solid #1ABC9C;;
@@ -433,6 +439,7 @@ h3{
 
 tr {
   text-align: left;
+  background: #000;
 }
 
 .user-list-info {
@@ -491,7 +498,6 @@ tr {
   text-align: center;
   border: 1px solid #1ABC9C;
   padding: 24px 2px 20px;
-  background-color: #EDEFF1;
   border-radius: 6px;
 }
 
@@ -540,8 +546,8 @@ p{
 }
 
 body {
-  background-image: url("/files/img/bkcg.png");
-  ba
+  /*background-image: url("/files/img/bkcg.png");*/
+  background: rgba(0,0,0,1);
 }
 
 .mail {
@@ -554,7 +560,7 @@ body {
 }
 
 a {
-  color: #2980b9;
+  color: #1ABC9C;
 }
 
 .partners {
@@ -598,7 +604,6 @@ a {
 
 .demo {
   border: 1px solid #bdc3c7;
-  background: #ecf0f1;
   color: #bdc3c7;
 }
 
@@ -649,8 +654,9 @@ a {
 
 .subject{
   margin: 5px;
-  color: #34495e;
   font-size: 14px;
+  font-family: 'OpenSans-Bold';
+  color: #922B2B;
 }
 
 .comment__{
@@ -661,7 +667,7 @@ a {
 
 .main-wrapper {
   overflow: auto;
-  padding: 70px 70px 0px 70px;
+  padding: 30px 70px 0px 70px;
 }
 
 .user-login{
@@ -678,6 +684,7 @@ a {
 .username {
   width: 8%;
   float: right;
+  margin-top: 18px;
 }
 
 .menu {
@@ -722,9 +729,10 @@ a {
 
 .section-main {
   padding: 28px;
-  background-color: rgba(39, 174, 96, 0.7);
+  background-color: rgba(13, 27, 19, 0.7);
   text-align: center;
   margin: 47px 0px 0px 0px;
+  border: 1px solid #D1A900;
 }
 
 .section-main h1{
@@ -832,7 +840,7 @@ a {
 .blogcategory {
   float: left;
   margin: 0px 10px 0px 0px;
-  background: #7f8c8d;
+  background: #0C454A;
   color: #fff;
   border-radius: 5px;
   padding: 5px;  
@@ -902,7 +910,6 @@ a {
 }
 
 .download-files {
-  background: #ecf0f1;
   color: #555;
   padding: 15px;
   border-radius: 10px;
@@ -947,6 +954,8 @@ a {
 
 .baner-4{
   margin: 50px 0px 30px 0px;
+  height: 299px;
+  border: 2px solid #fff;
 }
 
 .fa-times {
@@ -961,4 +970,13 @@ a {
   margin-bottom: 20px; 
 }
 
+.post-item a {
+  font-family: 'OpenSans-Bold';
+}
+
+
+#b4{
+  width: 1196px;
+  height: auto;
+}
 
