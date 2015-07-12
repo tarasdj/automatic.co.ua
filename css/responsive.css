@@ -13,7 +13,7 @@
     height: auto;
   }
 
-  .fa {
+  .fa-bars {
     font-size: 50px !important;
     color: #fff;
   }
@@ -23,13 +23,35 @@
     padding: 1px;
     display: block;
     margin-right: 91px;
+    margin-top: 4px;
+  }
+
+  .fa {
+    font-size: 12px;
+  }
+
+  .comment-item {
+    margin-bottom: 10px;
+  }
+
+  .g-recaptcha {
+    width: auto !important;
+  }
+
+  .systems-img {
+    width: 314px;
+    height: auto;  
   }
 
   .item-menu {
     display: list-item;
     padding: 21px;
     width: 100%;
-    border: 1px solid #fff;
+    border: 1px solid #5F5F5F;
+  }
+
+  .image-margin-auto {
+    margin: 0px;
   }
 
   .item-menu a {
@@ -100,7 +122,7 @@
   }
 
   .comment {
-    padding: 0px;
+    padding: 12px;
   }
 
   .form-comment {
