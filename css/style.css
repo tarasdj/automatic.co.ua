@@ -536,7 +536,7 @@ p{
 }
 
 .image-margin-auto {
-  margin: 13px 0px 0px 139px;
+  margin: 13px 0px 0px 96px;
 }
 
 .located {
@@ -978,5 +978,9 @@ a {
 #b4{
   width: 1196px;
   height: auto;
+}
+
+.center-img {
+  margin: auto;
 }
 
