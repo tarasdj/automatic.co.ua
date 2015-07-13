@@ -765,6 +765,7 @@ a {
 
 .company-info {
   overflow: auto;
+  margin-top: 40px;
 }
 
 .footer-mail{
