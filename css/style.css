@@ -124,9 +124,8 @@ td {
 
 h1 {
   font-family: 'OpenSans-Bold';
-  font-size: 22px;
-  padding: 15px;
-  color: #555;
+  font-size: 27px;
+  color: #C8C8C8;
 }
 
 h2 {
@@ -661,7 +660,6 @@ a {
 
 .comment__{
   margin: 5px;
-  color: #2c3e50;
   font-size: 14px;
 }
 
